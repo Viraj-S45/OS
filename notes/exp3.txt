@@ -1,0 +1,60 @@
+cp - Copy Files
+
+SYNTAX:
+cp [options] source dest
+cp [options] source... directory
+
+OPTIONS:
+- cp -a : Archive files
+- cp -f : Force copy by removing destination file if needed
+- cp -i : Interactive - ask before overwrite
+- cp -l : Link files instead of copying
+- cp -L : Follow symbolic links
+- cp -n : No file overwrite
+- cp -R : Recursive copy (including hidden files)
+- cp -u : Update - copy when source is newer than destination
+- cp -v : Verbose - print informative messages
+
+---
+
+ls - List Directory Contents
+
+SYNTAX:
+ls [options] [file|dir]
+
+OPTIONS:
+- ls -a : List all files including hidden files (starting with '.')
+- ls --color : Colored list [=always/never/auto]
+- ls -d : List directories with '*/'
+- ls -F : Add one character of */=>@| to entries
+- ls -i : List file's inode index number
+- ls -l : List with long format - show permissions
+- ls -la : List long format including hidden files
+- ls -lh : List long format with readable file size
+- ls -ls : List with long format with file size
+- ls -r : List in reverse order
+- ls -R : List directory tree recursively
+- ls -s : List file size
+- ls -S : Sort by file size
+- ls -t : Sort by time & date
+- ls -X : Sort by extension name
+
+
+---
+
+mv - Rename/Move Files
+
+SYNTAX:
+mv [options] source dest
+mv [options] source... directory
+
+OPTIONS:
+- mv -f : Force move by overwriting destination file without prompt
+- mv -i : Interactive prompt before overwrite
+- mv -u : Update - move when source is newer than destination
+- mv -v : Verbose - print source and destination files
+- man mv : Display help manual
+
+---
+
+

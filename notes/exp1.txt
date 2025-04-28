@@ -1,0 +1,134 @@
+Directory and File Operations
+
+- pwd - Print name of current/working directory  
+  Syntax: pwd
+  
+- ls - List directory contents  
+  Syntax: ls [OPTION]... [FILE]...
+  
+  - -a : Do not ignore entries starting with `.`
+  - -d : List directory entries instead of contents
+  - -l : Use a long listing format
+  - -r : Reverse order while sorting
+  
+- mkdir - Make directories  
+  Syntax: mkdir DIRECTORY_NAME
+  
+- rmdir - Remove empty directories  
+  Syntax: rmdir [OPTION]... DIRECTORY...
+
+File Viewing and Manipulation
+
+- whatis - Display one-line manual page descriptions  
+  Syntax: whatis [command name(s)]
+  
+- man - Display detailed manual for a command  
+  Syntax: man [command name]
+  
+- cat - Concatenate files and print on the standard output  
+  Syntax: cat [OPTION]... [FILE]...
+  
+  - -n : Number all output lines
+  - -E : Display $ at end of each line
+  - -T : Display TAB characters as ^I
+  - -A : Equivalent to -vET
+  
+- cp - Copy files and directories  
+  Syntax: cp [OPTION] SOURCE DEST
+  
+- rm - Remove files or directories  
+  Syntax: rm [OPTION]... FILE...
+  
+  - -f : Ignore nonexistent files, never prompt
+  - -i : Prompt before every removal
+  - -r : Remove directories and contents recursively
+  - -d : Remove empty directories
+  
+- head - Output the first part of files  
+  Syntax: head [OPTION]... [FILE]...
+  
+  - -c K : Print the first K bytes of each file
+  - -n K : Print the first K lines instead of 10
+  
+- tail - Output the last part of files  
+  Syntax: tail [OPTION]... [FILE]...
+  
+  - -c K : Output the last K bytes
+  - -n K : Print the last K lines instead of 10
+
+File Permissions
+
+- chmod - Change file mode bits  
+  Syntax: chmod [OPTION]... MODE[,MODE]... FILE...
+  - Uses symbolic or octal mode
+
+Text Processing
+
+- cut - Remove sections from each line of files  
+  Syntax: cut OPTION... [FILE]...
+  
+  - -b : Select only these bytes
+  - -c : Select only these characters
+  - -d : Use DELIM instead of TAB for field delimiter
+  - -f : Select only these fields
+  
+- grep - Print lines matching a pattern  
+  Syntax: grep [OPTIONS] PATTERN [FILE...]
+  
+  - -i : Ignore case distinctions
+  - -v : Invert match (select non-matching lines)
+  - -o : Print only the matched parts
+  - -n : Prefix each line with line number
+  
+- wc - Print newline, word, and byte counts for each file  
+  Syntax: wc [OPTION]... [FILE]...
+  
+  - -c : Print byte counts
+  - -l : Print newline counts
+  - -L : Print length of longest line
+  - -w : Print word counts
+  
+- sort - Sort lines of text files  
+  Syntax: sort [OPTION]... [FILE]...
+
+Miscellaneous Commands
+
+- cal - Displays a calendar  
+  Syntax: cal [month] [year]
+  
+- cmp - Compare two files byte by byte  
+  Syntax: cmp [OPTION]... FILE1 FILE2
+  
+- date - Print or set the system date and time  
+  Syntax: date [OPTION]... [+FORMAT]
+  
+- clear - Clear the terminal screen  
+  Syntax: clear
+
+Process Management
+
+- getppid() - Returns the process ID of the parent of the calling process  
+  Syntax: pid_t getppid(void);
+  
+- getpid() - Returns the process ID of the calling process  
+  Syntax: pid_t getpid(void);
+  
+- ps - List currently running processes  
+  Syntax: ps [options]
+  
+  - PID – Unique process ID
+  - TTY – Terminal type
+  - TIME – CPU time consumed
+  - CMD – Command that launched the process
+
+System Calls (File Manipulation)
+
+Some common system calls:
+
+- create - Create a new file
+- delete - Delete a file
+- read - Read from a file
+- write - Write to a file
+- reposition - Move file pointer
+- close - Close a file
+- get/set attributes - Retrieve or modify file attributes

@@ -1,0 +1,23 @@
+echo "Top 10 processes in descending order are:"
+ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head
+
+echo "Processes with highest memory usage are:"
+ps aux | sort -nk +4 | tail
+
+echo "Current logged-in users and logname are:"
+logname
+
+echo "Current shell is:"
+echo $SHELL
+
+echo "Home directory is:"
+echo $HOME
+
+echo "Current path is:"
+echo $PATH
+
+echo "Current working directory is:"
+pwd
+
+echo "Current OS version, release number, kernel version are:"
+uname -a
