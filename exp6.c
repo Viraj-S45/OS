@@ -1,62 +1,48 @@
 #include <stdio.h>
-#include <stdlib.h>
 
-int mutex = 1, full = 0, empty = 3, x = 0;
+int main()
+{
+    int n, i;
+    float totalWT = 0, avgWT;
 
-void producer();
-void consumer();
-int wait(int);
-int signal(int);
+    // Step 2: Accept number of processes
+    printf("Enter the number of processes: ");
+    scanf("%d", &n);
 
-int main() {
-    int n;
-    printf("\n1. Producer\n2. Consumer\n3. Exit");
-    while (1) {
-        printf("\nEnter your choice: ");
-        scanf("%d", &n);
-        switch (n) {
-            case 1:
-                if ((mutex == 1) && (empty != 0))
-                    producer();
-                else
-                    printf("Buffer is full!!");
-                break;
-            case 2:
-                if ((mutex == 1) && (full != 0))
-                    consumer();
-                else
-                    printf("Buffer is empty!!");
-                break;
-            case 3:
-                exit(0);
-                break;
-        }
+    int pid[n], bt[n], wt[n];
+
+    // Step 3: Accept burst times
+    for (i = 0; i < n; i++)
+    {
+        pid[i] = i + 1;
+        printf("Enter Burst Time for Process %d: ", pid[i]);
+        scanf("%d", &bt[i]);
     }
-    return 0;
-}
 
-int wait(int s) {
-    return (--s);
-}
+    // Step 4: Initialize waiting time for first process
+    wt[0] = 0;
 
-int signal(int s) {
-    return (++s);
-}
+    // Step 5-7: Calculate waiting time for each process
+    for (i = 1; i < n; i++)
+    {
+        wt[i] = wt[i - 1] + bt[i - 1];
+    }
 
-void producer() {
-    mutex = wait(mutex);
-    full = signal(full);
-    empty = wait(empty);
-    x++;
-    printf("\nProducer produces the item %d", x);
-    mutex = signal(mutex);
-}
+    // Step 8: Calculate total and average waiting time
+    for (i = 0; i < n; i++)
+    {
+        totalWT += wt[i];
+    }
+    avgWT = totalWT / n;
 
-void consumer() {
-    mutex = wait(mutex);
-    full = wait(full);
-    empty = signal(empty);
-    printf("\nConsumer consumes item %d", x);
-    x--;
-    mutex = signal(mutex);
+    // Display results
+    printf("\nPID\tBurst Time\tWaiting Time\n");
+    for (i = 0; i < n; i++)
+    {
+        printf("%d\t%d\t\t%d\n", pid[i], bt[i], wt[i]);
+    }
+
+    printf("\nAverage Waiting Time = %.2f\n", avgWT);
+
+    return 0; // Step 9: End
 }

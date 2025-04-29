@@ -1,0 +1,10 @@
+fork() System Call
+
+The fork() system call creates a new process in UNIX. It takes no arguments and returns a process ID (pid_t).
+
+Behavior of fork() return values:
+- Negative value: Fork failed.
+- Zero: Returned to the newly created child process.
+- Positive value: Returned to the parent process with the child’s process ID.
+
+The parent and child processes have separate address spaces but initially contain identical copies of the program.

@@ -1,0 +1,24 @@
+SJF (Shortest Job First):
+o This algorithm associates with each process the length of the process’s next
+CPU burst. When the CPU is available, it is assigned to the process that has the
+smallest next CPU burst. If the next CPU bursts of two processes are same,
+FCFS is used to break the tie.
+o It is also called shortest next CPU burst algorithm or shortest remaining time
+first scheduling.
+o It is provably optimal, in that it gives the minimum average waiting time for a
+given set of processes.
+o The real difficulty with SJF knows the length of the next CPU request.
+o It can be either PREEMPTIVE (SRTF- Shortest Remaining Time First) or
+NON-PREEMPTIVE.
+
+SJF (Shortest Job First) Scheduling
+1. Start
+2. Accept no. of processes from user.
+3. Accept burst time of each process i.e BT[i].
+4. Sort the processes according to ascending order of burst time.
+5. Initialize waiting time of first process = 0 i.e. (WT[1])=0.
+6. For(i=2;i<=n;i++)
+7. WT[i]=WT[i-1]+BT[i-1]
+8. End of for loop
+9. Calculate average waiting time= (Total Waiting Time) / No. of Processes
+10. End

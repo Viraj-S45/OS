@@ -1,0 +1,20 @@
+FCFS (First-Come, First-Served):
+o It is the simplest algorithm and NON-PREEMPTIVE.
+o The process that requests the CPU first is allocated the CPU first.
+o The implementation is easily managed by queue. When a process enters the
+ready queue, its PCB is linked onto the tail of the queue. When the CPU is free,
+it is allocated to the process at the head of the queue
+o The average waiting time, however, is long. It is not minimal and may vary
+substantially if the process’s CPU burst time varies greatly.
+o This algorithm is particularly troublesome for time-sharing systems.
+
+FCFS Scheduling
+1. Start
+2. Accept no. of processes from user.
+3. Accept burst time of each process i.e BT[i].
+4. Initialize waiting time of P1=0 i.e. (WT[1])=0.
+5. For(i=2;i<=n;i++)
+6. WT[i]=WT[i-1]+BT[i-1]
+7. End of for loop
+8. Calculate average waiting time= (Total Waiting Time) / No. of Processes
+9. End
